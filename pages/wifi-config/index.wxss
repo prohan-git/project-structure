@@ -1,0 +1,211 @@
+/* WiFi配置页面样式 */
+
+.container {
+  padding: 20px;
+}
+
+.status-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+.status-icon {
+  margin-bottom: 15px;
+}
+
+.status-icon.connected,
+.status-icon.config_success {
+  color: #1aad19;
+}
+
+.status-icon.failed,
+.status-icon.config_failed {
+  color: #ff3b30;
+}
+
+.loading-icon {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #1aad19;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.status-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+}
+
+.error-msg {
+  color: #ff3b30;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.retry-btn {
+  margin-top: 15px;
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 14px;
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.wifi-info-panel {
+  padding: 20px;
+}
+
+.form-item {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #333;
+}
+
+.form-input {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.send-btn {
+  margin-top: 20px;
+  width: 100%;
+  height: 44px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #1aad19;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-disabled {
+  background-color: #ddd !important;
+  color: #999 !important;
+}
+
+.progress-panel {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.progress-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.progress-steps {
+  position: relative;
+}
+
+.progress-step {
+  position: relative;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.progress-step:last-child {
+  margin-bottom: 0;
+}
+
+.step-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin-right: 15px;
+  z-index: 2;
+}
+
+.step-line {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 2px;
+  height: 40px;
+  background-color: #ddd;
+  z-index: 1;
+}
+
+.step-text {
+  font-size: 15px;
+  color: #666;
+}
+
+.progress-step.active .step-dot,
+.progress-step.completed .step-dot {
+  background-color: #1aad19;
+}
+
+.progress-step.active .step-line,
+.progress-step.completed .step-line {
+  background-color: #1aad19;
+}
+
+.progress-step.active .step-text,
+.progress-step.completed .step-text {
+  color: #333;
+  font-weight: 500;
+}
+
+.tip-panel {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tip-text {
+  color: #ff9500;
+  font-size: 14px;
+}
+
+.bottom-btn-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.back-btn {
+  width: 80%;
+  height: 44px;
+  font-size: 16px;
+  color: #666;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+} 

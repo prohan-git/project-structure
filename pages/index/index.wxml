@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="logo-container">
+    <image class="logo" src="/assets/logo.png" mode="aspectFit"></image>
+    <view class="title">ESP32配网助手</view>
+  </view>
+
+  <view wx:if="{{!canUseWifi}}" class="card">
+    <view class="card-content">
+      <text>{{wifiErrorMsg || '请授权使用WiFi功能以继续使用'}}</text>
+      <button class="btn-primary mt" bindtap="openSettings">前往设置</button>
+    </view>
+  </view>
+  
+  <view class="devices-empty" wx:else>
+    <view class="empty-icon">
+      <view class="icon-circle">
+        <view class="icon-device"></view>
+      </view>
+    </view>
+    <view class="empty-text">暂无已配置设备</view>
+    <view class="empty-tip">点击下方按钮添加设备</view>
+  </view>
+
+  <view class="bottom-action">
+    <button class="btn-primary add-btn" bindtap="gotoPreConfig" disabled="{{!canUseWifi}}">添加设备</button>
+  </view>
+</view> 

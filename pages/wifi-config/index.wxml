@@ -1,0 +1,65 @@
+<view class="container">
+  <view class="status-panel">
+    <view class="status-icon {{configStatus}}">
+      <icon wx:if="{{configStatus === 'config_success'}}" type="success" size="28" color="#1aad19"></icon>
+      <icon wx:elif="{{configStatus === 'failed' || configStatus === 'config_failed'}}" type="warn" size="28" color="#ff3b30"></icon>
+      <view wx:else class="loading-icon"></view>
+    </view>
+    <view class="status-text">
+      <text>{{statusMsg}}</text>
+      <text wx:if="{{errorMsg}}" class="error-msg">{{errorMsg}}</text>
+    </view>
+    <button wx:if="{{configStatus === 'failed'}}" class="retry-btn" bindtap="retrySearch">重新搜索</button>
+  </view>
+
+  <view class="progress-panel">
+    <view class="progress-title">配网进度</view>
+    <view class="progress-steps">
+      <view class="progress-step {{stepStatus[0]}}">
+        <view class="step-dot"></view>
+        <view class="step-line"></view>
+        <text class="step-text">搜索设备</text>
+      </view>
+      <view class="progress-step {{stepStatus[1]}}">
+        <view class="step-dot"></view>
+        <view class="step-line"></view>
+        <text class="step-text">连接设备</text>
+      </view>
+      <view class="progress-step {{stepStatus[2]}}">
+        <view class="step-dot"></view>
+        <view class="step-line"></view>
+        <text class="step-text">配置WiFi</text>
+      </view>
+      <view class="progress-step {{stepStatus[3]}}">
+        <view class="step-dot"></view>
+        <text class="step-text">完成配网</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card" wx:if="{{configStatus === 'connected' || configStatus === 'config_sent' || configStatus === 'config_failed'}}">
+    <view class="wifi-info-panel">
+      <view class="form-item">
+        <text class="form-label">WiFi名称</text>
+        <input class="form-input" value="{{ssid}}" disabled placeholder="WiFi SSID" />
+      </view>
+
+      <view class="form-item">
+        <text class="form-label">WiFi密码</text>
+        <input class="form-input" value="{{password}}" type="text" password placeholder="请输入WiFi密码" bindinput="onPasswordInput" />
+      </view>
+
+      <button class="send-btn {{!isConnected || configuring || !ssid ? 'btn-disabled' : ''}}" 
+              disabled="{{!isConnected || configuring || !ssid || configStatus === 'config_sent'}}" 
+              bindtap="sendConfig">{{configStatus === 'config_sent' ? '正在配置中...' : '发送配置'}}</button>
+    </view>
+  </view>
+
+  <view class="tip-panel" wx:if="{{configStatus === 'config_success'}}">
+    <text class="tip-text">完成配置后，请手动重新连接家庭WiFi</text>
+  </view>
+
+  <view class="bottom-btn-container">
+    <button class="back-btn" bindtap="goBack">返回</button>
+  </view>
+</view> 

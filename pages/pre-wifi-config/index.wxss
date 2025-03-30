@@ -1,0 +1,128 @@
+/* 配网前准备页面样式 */
+.container {
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 12px;
+  border-left: 4px solid #1aad19;
+  padding-left: 10px;
+}
+
+.card-content {
+  color: #333;
+}
+
+.wifi-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.wifi-name {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.wifi-detail {
+  font-size: 14px;
+  color: #666;
+}
+
+.no-wifi {
+  color: #999;
+  padding: 10px 0;
+}
+
+.steps {
+  margin: 5px 0;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.step-num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  background-color: #1aad19;
+  color: white;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.step-text {
+  font-size: 15px;
+  color: #333;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+}
+
+.note-item {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.btn-primary {
+  background-color: #1aad19;
+  color: #fff;
+  margin-top: 12px;
+}
+
+.mt {
+  margin-top: 15px;
+}
+
+.bottom-btn-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.start-btn {
+  width: 90%;
+  height: 46px;
+  font-size: 17px;
+  color: #fff;
+  background-color: #1aad19;
+  border-radius: 6px;
+}
+
+.btn-disabled {
+  background-color: #ddd !important;
+  color: #999 !important;
+} 
